@@ -1,7 +1,7 @@
 # Running the IT Service Desk Copilot (for teammates)
 
 The code lives in our private GitHub repository. The fine-tuned routing model (~500 MB) is too large for git,
-so it is attached to the repository's **Releases** page as `router-model-v2.zip`. Without it the app still runs,
+so it is attached to the repository's **Releases** page (https://github.com/VaikunthSuresh/servicedesk-copilot/releases/tag/v1.0) as `router-model-v2.zip`. Without it the app still runs,
 using a slower, less accurate zero-shot router.
 
 ## Setup (about 15 minutes, needs Python 3.10–3.12)
@@ -9,7 +9,7 @@ using a slower, less accurate zero-shot router.
 1. Clone the repo, then download `router-model-v2.zip` from the repo's **Releases** page into the folder
    that CONTAINS `servicedesk-copilot/` and unzip it there (it adds `finetune/outputs/v2_6cls_merged/`):
    ```bash
-   git clone https://github.com/<owner>/servicedesk-copilot.git
+   git clone https://github.com/VaikunthSuresh/servicedesk-copilot.git
    unzip router-model-v2.zip            # run next to the servicedesk-copilot folder, not inside it
    ```
    Later updates: `git pull` inside the folder.
