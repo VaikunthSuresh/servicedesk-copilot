@@ -1,0 +1,75 @@
+{
+  "classification": {
+    "label": "Technical & IT Support",
+    "score": 0.6804,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Technical & IT Support",
+        "score": 0.6804
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.2295
+      },
+      {
+        "label": "Sales and Pre-Sales",
+        "score": 0.0479
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "negative",
+    "score": 0.6455,
+    "urgency": "P2",
+    "urgency_signals": [
+      "deadline"
+    ],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "Hi, I joined the GenAI team last week and still don't have an API key for the internal LLM platform. Our proof-of-concept demo to the business is on Friday, can this be sped up?",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "No, the process cannot be expedited as it requires approval from the project lead and issuance by the AI Platform Team within 2 business days [1]. You should raise an \"AI Platform Access\" request immediately if you haven't done so already.",
+    "sources": [
+      {
+        "source": "DEV-001_GenAI_Platform_Access.md",
+        "chunk_id": 2,
+        "score": 0.656,
+        "text": "DEV-001: Internal GenAI Platform Access and API Keys (synthetic analogue) > Requesting an API Key\n1. Raise an \"AI Platform Access\" request with the project ID from the AI use-case register.\n2. The project lead approves the request.\n3. The AI Platform Team issues the dev key within 2 business days. Test and prod keys additionally need a completed AI risk assessment.\n4. Keys are stored in the team's secrets vault. Never put keys in source code, tickets, chat or email."
+      },
+      {
+        "source": "DEV-001_GenAI_Platform_Access.md",
+        "chunk_id": 1,
+        "score": 0.6312,
+        "text": "DEV-001: Internal GenAI Platform Access and API Keys (synthetic analogue) > Who Can Get Access\n- Engineers in an approved GenAI project. The project must be registered in the AI use-case register before keys are issued.\n- Each project gets one API key per environment (dev, test, prod). Personal keys are not issued."
+      },
+      {
+        "source": "DEV-001_GenAI_Platform_Access.md",
+        "chunk_id": 0,
+        "score": 0.5716,
+        "text": "DEV-001: Internal GenAI Platform Access and API Keys (synthetic analogue) > Overview\nOwner: AI Platform Team | Applies to: engineers building GenAI features"
+      },
+      {
+        "source": "DEV-001_GenAI_Platform_Access.md",
+        "chunk_id": 4,
+        "score": 0.4928,
+        "text": "DEV-001: Internal GenAI Platform Access and API Keys (synthetic analogue) > Data Rules\nOnly data classified Public or Internal may be sent to the platform in dev. Confidential data needs an approved prod setup with logging disabled for prompts."
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for reaching out regarding your API key for the internal LLM platform. I understand the urgency, and your ticket has been assigned to the Technical & IT Support team with a priority level of P2.\n\nTo expedite the process, please ensure you have raised an \"AI Platform Access\" request immediately if you haven't done so already. Additionally, I recommend following up with your project lead for approval.\n\nThe AI Platform Team will process your request within 2 business days. If you need further assistance, feel free to reach out.",
+  "latency_ms": {
+    "classify": 289.0,
+    "sentiment": 14.2,
+    "summarize": 0.0,
+    "rag": 1742.5,
+    "reply": 2446.7,
+    "total": 4492.4
+  }
+}

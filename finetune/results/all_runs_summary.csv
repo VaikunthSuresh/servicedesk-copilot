@@ -1,0 +1,4 @@
+run,model,zero_shot_accuracy,finetuned_accuracy,finetuned_macro_f1,latency_ms
+v1_8cls,distilbert,0.235,0.4159,0.4208,5.0
+v2_8cls,roberta-base,0.1975,0.4281,0.4517,10.1
+v2_6cls_merged,roberta-base,0.3232,0.5532,0.5218,10.6

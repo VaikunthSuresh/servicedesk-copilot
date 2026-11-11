@@ -1,0 +1,86 @@
+type,question,answer,sources,cited,refused,correct,faithful,latency_ms
+direct,"vpn keeps kicking me out every couple mins since last nights windows patch, pls help","Yes, you can resolve this issue by restarting the ""PanGPS"" service (for GlobalProtect) or ""Cisco AnyConnect Secure Mobility Agent"" service. 
+
+1. Open services.msc.
+2. Locate and restart the ""PanGPS"" service if using GlobalProtect, or the ""Cisco AnyConnect Secure Mobility Agent"" service if using Cisco AnyConnect.
+3. Reconnect to the VPN.",SOP-001_VPN_Troubleshooting.md; SOP-001_VPN_Troubleshooting.md; SOP-005_WiFi_and_Office_Network.md; SOP-001_VPN_Troubleshooting.md,0,0,1,5,2390
+direct,which globalprotect version do we support on windows laptops,I couldn't find this in the knowledge base. Please escalate to the Network Operations team.,,0,1,0,1,1049
+direct,how many wrong password tries until I'm locked out?,You will be locked out after 5 failed attempts in 15 minutes [4].,SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md,1,0,1,5,1217
+direct,what do I need to check before resetting someone's password over the phone,"You must verify the user's identity as per policy, which includes confirming their employee ID and manager name, or performing a callback to the registered mobile [3].",SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-001_VPN_Troubleshooting.md,1,0,1,5,1809
+direct,my account locks itself multiple times every day even though I type the right password,"Yes, repeated lockouts usually mean an old password is cached on a device. Please update the password on all devices. If lockouts continue, escalate to IAM (L2) to check the lockout source in the domain controller logs [1].",SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md,1,0,1,5,1607
+direct,changed my phone and now the authenticator app doesn't get any prompts,"Yes, you need to re-register MFA. Follow these steps:
+
+1. Verify your identity as per SOP-002 policy.
+2. In the Entra ID admin portal, open your user account, select ""Authentication methods"", and choose ""Require re-register MFA"".
+3. Sign in at the MFA setup page from a laptop and scan the new QR code with Microsoft Authenticator.",SOP-003_MFA_and_Email_Issues.md; SOP-001_VPN_Troubleshooting.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md,0,0,1,5,1946
+direct,outlook says disconnected at the bottom and mails aren't coming in,"Check the service health dashboard for an active Exchange Online incident; if there is one, link the ticket to the master incident and do not troubleshoot further [1]. If not, follow these steps:
+
+1. Ask the user to restart Outlook.
+2. If it still shows ""Disconnected"", start Outlook in safe mode (`outlook.exe /safe`) to rule out add-ins.
+3. If safe mode works but normal mode does not, recreate the Outlook profile from Control Panel > Mail > Show Profiles.
+4. If the mailbox is above 95% of quota, guide the user to archive mail older than 12 months.",SOP-003_MFA_and_Email_Issues.md; SOP-003_MFA_and_Email_Issues.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-003_MFA_and_Email_Issues.md,1,0,1,5,2825
+direct,"I typed my password into a weird link from an email pretending to be IT, what now","Reset your password immediately, revoke sessions in Entra ID, and route to SOC as P1 [1].",SOP-003_MFA_and_Email_Issues.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md,1,0,1,5,1437
+direct,laptop crawls when teams and excel are both running,"Yes, the laptop may be running slow due to high CPU or memory usage. 
+
+1. Check free disk space; if it's below 10%, run Disk Cleanup and clear the Downloads folder with the user's consent.
+2. Open Task Manager and check for processes using more than 80% CPU or memory for several minutes.
+3. Ensure pending Windows updates are installed and the laptop has been restarted in the last 7 days.
+4. If the laptop is older than 4 years, raise a hardware refresh request instead of continuing to troubleshoot [1].",SOP-004_Laptop_Hardware_and_Printer.md; SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md,1,0,1,5,2579
+direct,windows laptop is asking for a bitlocker recovery key at startup,Retrieve the BitLocker recovery key from Entra ID only after identity verification [1].,SOP-004_Laptop_Hardware_and_Printer.md; SOP-010_macOS_Device_Support.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-011_Backup_and_File_Recovery.md,1,0,1,5,1076
+direct,"print queue is stuck, nothing comes out of the printer","Confirm the user is printing to the secure follow-me print queue, not a direct printer IP, and then restart the ""Print Spooler"" service to clear stuck jobs [1].",SOP-004_Laptop_Hardware_and_Printer.md; SOP-004_Laptop_Hardware_and_Printer.md; SOP-004_Laptop_Hardware_and_Printer.md; SOP-004_Laptop_Hardware_and_Printer.md,1,0,1,5,1433
+direct,what's the resolution time for a high priority single-user issue,The resolution time for a high priority single-user issue (P2) is 1 business day [1].,Policy_Ticket_Priority_and_SLA.md; Policy_Ticket_Priority_and_SLA.md; Policy_Ticket_Priority_and_SLA.md; SOP-010_macOS_Device_Support.md,1,0,0,3,1206
+direct,who should get a ticket about the payroll system,The ticket about the payroll system should go to the HR Systems team [1].,Policy_Ticket_Priority_and_SLA.md; Policy_Ticket_Priority_and_SLA.md; Policy_Ticket_Priority_and_SLA.md; SOP-009_Onboarding_and_Offboarding.md,1,0,1,5,1276
+direct,when does L1 have to hand a ticket over to L2,L1 must escalate to L2 if not resolved within 50% of the resolution SLA [1].,Policy_Ticket_Priority_and_SLA.md; Policy_Ticket_Priority_and_SLA.md; SOP-009_Onboarding_and_Offboarding.md; SOP-002_Password_Reset_and_Account_Lockout.md,1,0,1,5,1329
+direct,my laptop won't connect to the office wifi but my phone works on guest,"Your laptop cannot connect to the office Wi-Fi because it must use the CORP-SECURE network, which is for company laptops only. Please follow these steps to troubleshoot your laptop connection:
+
+1. Confirm the laptop shows a valid device certificate (Windows: certlm.msc → Personal → Certificates; macOS: Keychain Access → System).
+2. Ensure the laptop has connected to the corporate network or VPN at least once in the last 30 days to renew the certificate; otherwise, connect it by Ethernet in the office.
+3. Forget the CORP-SECURE network and rejoin.
+4. If several users on the same floor cannot connect, raise a P2 for Network Operations, noting the floor and the nearest meeting room name [1].",SOP-005_WiFi_and_Office_Network.md; SOP-005_WiFi_and_Office_Network.md; SOP-005_WiFi_and_Office_Network.md; SOP-005_WiFi_and_Office_Network.md,1,0,1,5,3176
+direct,can I connect my personal phone to CORP-SECURE,"No, personal devices must never be connected to CORP-SECURE [1].",SOP-005_WiFi_and_Office_Network.md; SOP-005_WiFi_and_Office_Network.md; SOP-005_WiFi_and_Office_Network.md; SOP-003_MFA_and_Email_Issues.md,1,0,1,5,1282
+direct,teams can't hear me in calls since I plugged into the dock,"Yes, the docking station may have taken over as the default device. 
+
+1. In Teams, open Settings → Devices and check that the correct speaker and microphone are selected.
+2. On Windows, check Privacy settings → Microphone → ""Let desktop apps access your microphone"" is On. On macOS, check System Settings → Privacy & Security → Microphone → Microsoft Teams is enabled.
+3. Make a test call (Settings → Devices → Make a test call).
+4. Clear the Teams cache if problems persist: quit Teams, delete the contents of `%appdata%\Microsoft\Teams` (classic) or reset the app from Settings → Apps (new Teams), and restart [1].",SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md,1,0,1,5,3073
+direct,the teams console in the meeting room is frozen and the meeting has started,"Re-route the ticket to the Workplace AV team with the room name, as they support meeting room consoles [1].",SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md; SOP-005_WiFi_and_Office_Network.md; SOP-006_Teams_Meetings_Audio_Video.md,1,0,1,5,1623
+direct,how long are teams meeting recordings kept,Teams meeting recordings are kept for 60 days unless the organiser changes the expiry date [1].,SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md; SOP-006_Teams_Meetings_Audio_Video.md,1,0,1,5,1123
+direct,can you give me admin rights so I can install a tool,"No, users do not have local administrator rights; agents must not grant them to install software [1].",SOP-007_Software_Installation_and_Licences.md; SOP-007_Software_Installation_and_Licences.md; SOP-003_MFA_and_Email_Issues.md; SOP-008_Shared_Drive_and_SharePoint_Access.md,1,0,1,5,1385
+direct,how long does security review take for software that isn't on the approved list,The security review for software that isn't on the approved list typically takes 5 business days [1].,SOP-007_Software_Installation_and_Licences.md; SOP-008_Shared_Drive_and_SharePoint_Access.md; SOP-007_Software_Installation_and_Licences.md; SOP-010_macOS_Device_Support.md,1,0,1,5,1482
+direct,"I need access to the finance reports shared folder, who approves it",The data owner of the folder approves the access request [1].,SOP-008_Shared_Drive_and_SharePoint_Access.md; SOP-008_Shared_Drive_and_SharePoint_Access.md; SOP-008_Shared_Drive_and_SharePoint_Access.md; SOP-008_Shared_Drive_and_SharePoint_Access.md,1,0,1,5,1076
+direct,I moved to a new team and lost access to a folder I used every day,"Yes, you likely lost access because group memberships are reviewed on transfer and old ones are removed [1]. To regain access, follow these steps:
+
+1. Confirm with your new manager that you need access to the folder.
+2. Request access from the data owner of the folder or site, not just your manager.
+3. Wait for approval before attempting to access the folder again.",SOP-008_Shared_Drive_and_SharePoint_Access.md; SOP-008_Shared_Drive_and_SharePoint_Access.md; SOP-011_Backup_and_File_Recovery.md; Policy_Acceptable_Use_and_Data_Classification.md,1,0,1,5,2005
+direct,when is a leaver's account disabled,A leaver's account is disabled at 18:00 local time on the last working day [1].,SOP-009_Onboarding_and_Offboarding.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md; SOP-002_Password_Reset_and_Account_Lockout.md,1,0,1,5,1274
+direct,what happens if someone who left doesn't return their laptop,I couldn't find this in the knowledge base. Please escalate to the appropriate team.,,0,1,0,1,1231
+direct,"new joiner starting monday, when should HR raise the request","HR should raise the request 5 business days before the start date, which would be the previous Monday.",SOP-009_Onboarding_and_Offboarding.md; SOP-009_Onboarding_and_Offboarding.md; Policy_Ticket_Priority_and_SLA.md; SOP-009_Onboarding_and_Offboarding.md,0,0,1,5,1105
+distractor,vpn on my macbook says connected but nothing loads after upgrading macOS,"You need to approve the GlobalProtect system extension in System Settings. 
+
+1. Go to System Settings → Privacy & Security.
+2. Find the option for Palo Alto Networks and click ""Allow.""
+3. If the issue persists, remove GlobalProtect using the uninstaller in Self Service and reinstall it [1].",SOP-010_macOS_Device_Support.md; SOP-001_VPN_Troubleshooting.md; SOP-001_VPN_Troubleshooting.md; SOP-005_WiFi_and_Office_Network.md,1,0,1,5,1870
+distractor,my mac is asking for the filevault recovery key,"Retrieve the FileVault recovery key from the device management console (Jamf) after verifying your identity as per SOP-002, and do not send the key by email or chat; read it out over a call [1].",SOP-010_macOS_Device_Support.md; SOP-004_Laptop_Hardware_and_Printer.md; SOP-010_macOS_Device_Support.md; SOP-011_Backup_and_File_Recovery.md,1,0,1,5,1576
+distractor,"I deleted a file from my Documents folder last month, can I get it back","Yes, you can get it back. Follow these steps:
+
+1. Check the OneDrive recycle bin, as deleted files are kept for 93 days.
+2. If you need an earlier version of the file, use Version History in OneDrive or SharePoint, where the last 500 versions are kept.
+3. If you need to restore many files at once, use ""Restore your OneDrive"" to a point in the last 30 days [1].",SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md,1,0,1,5,2572
+distractor,"a file on the network share was deleted yesterday, can it be restored","Yes, the file can be restored. 
+
+To restore a deleted file from a network share, follow these steps:
+1. Raise a restore request with the full path of the deleted file.
+2. Include the approximate time of deletion in your request.
+3. Wait for the Storage team to complete the restore, which is typically done within 1 business day [2].",SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md,1,0,1,5,1883
+distractor,all my files suddenly have a strange extension and won't open,"Yes, you should disconnect the laptop from the network immediately and raise a P1 to the Security Operations Centre. Do not try to restore files before SOC approves [1].",SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md; SOP-006_Teams_Meetings_Audio_Video.md,1,0,1,5,1385
+distractor,can I paste a customer contract into ChatGPT to summarise it,"No, you must not paste a customer contract into ChatGPT as it is classified as Confidential data, which should never be shared with public AI chatbots [1].",Policy_Acceptable_Use_and_Data_Classification.md; SOP-009_Onboarding_and_Offboarding.md; Policy_Ticket_Priority_and_SLA.md; Policy_Acceptable_Use_and_Data_Classification.md,1,0,1,5,1338
+distractor,I lost my work laptop at the airport,Report lost or stolen devices to the service desk within 1 hour; this is handled as a P1 security incident and the device is remote-wiped [1].,Policy_Acceptable_Use_and_Data_Classification.md; SOP-005_WiFi_and_Office_Network.md; SOP-004_Laptop_Hardware_and_Printer.md; SOP-004_Laptop_Hardware_and_Printer.md,1,0,1,5,1433
+distractor,can I copy project files to my own USB stick,"No, USB mass storage is blocked on company laptops unless you have Information Security approval and an encrypted company USB drive [1].",Policy_Acceptable_Use_and_Data_Classification.md; SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md; SOP-011_Backup_and_File_Recovery.md,1,0,1,5,1227
+out_of_scope,what's on the canteen menu today,I couldn't find this in the knowledge base. Please escalate to the right team.,,0,1,,,938
+out_of_scope,how many days of annual leave do I have left,I couldn't find this in the knowledge base. Please escalate to the HR team.,,0,1,,,1135
+out_of_scope,when is the next salary revision,I couldn't find this in the knowledge base. Please escalate to the HR team.,,0,1,,,967
+out_of_scope,how do I book a cab for a client visit,I couldn't find this in the knowledge base. Please escalate to the appropriate team.,,0,1,,,1062
+out_of_scope,what is the company's share price today,I couldn't find this in the knowledge base. Please escalate to the right team.,,0,1,,,1301
+out_of_scope,how do I configure a Kubernetes ingress controller,I couldn't find this in the knowledge base. Please escalate to the right team.,,0,1,,,1330

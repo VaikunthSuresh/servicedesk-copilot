@@ -1,0 +1,311 @@
+[
+ {
+  "question": "vpn keeps kicking me out every couple mins since last nights windows patch, pls help",
+  "expected_sources": [
+   "SOP-001_VPN_Troubleshooting.md"
+  ],
+  "key_fact": "restart the PanGPS service",
+  "type": "direct"
+ },
+ {
+  "question": "which globalprotect version do we support on windows laptops",
+  "expected_sources": [
+   "SOP-001_VPN_Troubleshooting.md",
+   "SOP-010_macOS_Device_Support.md"
+  ],
+  "key_fact": "6.2 or later",
+  "type": "direct"
+ },
+ {
+  "question": "how many wrong password tries until I'm locked out?",
+  "expected_sources": [
+   "SOP-002_Password_Reset_and_Account_Lockout.md"
+  ],
+  "key_fact": "5 failed attempts in 15 minutes",
+  "type": "direct"
+ },
+ {
+  "question": "what do I need to check before resetting someone's password over the phone",
+  "expected_sources": [
+   "SOP-002_Password_Reset_and_Account_Lockout.md"
+  ],
+  "key_fact": "verify identity: employee ID + manager name, or callback to the registered mobile",
+  "type": "direct"
+ },
+ {
+  "question": "my account locks itself multiple times every day even though I type the right password",
+  "expected_sources": [
+   "SOP-002_Password_Reset_and_Account_Lockout.md"
+  ],
+  "key_fact": "old password cached on a phone or mapped drive",
+  "type": "direct"
+ },
+ {
+  "question": "changed my phone and now the authenticator app doesn't get any prompts",
+  "expected_sources": [
+   "SOP-003_MFA_and_Email_Issues.md"
+  ],
+  "key_fact": "require re-register MFA in Entra ID",
+  "type": "direct"
+ },
+ {
+  "question": "outlook says disconnected at the bottom and mails aren't coming in",
+  "expected_sources": [
+   "SOP-003_MFA_and_Email_Issues.md"
+  ],
+  "key_fact": "check service health; restart Outlook; safe mode; recreate profile",
+  "type": "direct"
+ },
+ {
+  "question": "I typed my password into a weird link from an email pretending to be IT, what now",
+  "expected_sources": [
+   "SOP-003_MFA_and_Email_Issues.md"
+  ],
+  "key_fact": "reset password, revoke sessions, route to SOC as P1",
+  "type": "direct"
+ },
+ {
+  "question": "laptop crawls when teams and excel are both running",
+  "expected_sources": [
+   "SOP-004_Laptop_Hardware_and_Printer.md"
+  ],
+  "key_fact": "check disk space, Task Manager, pending updates/restart",
+  "type": "direct"
+ },
+ {
+  "question": "windows laptop is asking for a bitlocker recovery key at startup",
+  "expected_sources": [
+   "SOP-004_Laptop_Hardware_and_Printer.md"
+  ],
+  "key_fact": "retrieve from Entra ID after identity verification",
+  "type": "direct"
+ },
+ {
+  "question": "print queue is stuck, nothing comes out of the printer",
+  "expected_sources": [
+   "SOP-004_Laptop_Hardware_and_Printer.md"
+  ],
+  "key_fact": "restart the Print Spooler service",
+  "type": "direct"
+ },
+ {
+  "question": "what's the resolution time for a high priority single-user issue",
+  "expected_sources": [
+   "Policy_Ticket_Priority_and_SLA.md"
+  ],
+  "key_fact": "P2: 1 business day",
+  "type": "direct"
+ },
+ {
+  "question": "who should get a ticket about the payroll system",
+  "expected_sources": [
+   "Policy_Ticket_Priority_and_SLA.md"
+  ],
+  "key_fact": "HR Systems team",
+  "type": "direct"
+ },
+ {
+  "question": "when does L1 have to hand a ticket over to L2",
+  "expected_sources": [
+   "Policy_Ticket_Priority_and_SLA.md"
+  ],
+  "key_fact": "not resolved within 50% of the resolution SLA",
+  "type": "direct"
+ },
+ {
+  "question": "my laptop won't connect to the office wifi but my phone works on guest",
+  "expected_sources": [
+   "SOP-005_WiFi_and_Office_Network.md"
+  ],
+  "key_fact": "device certificate; reconnect via Ethernet if offline more than 30 days",
+  "type": "direct"
+ },
+ {
+  "question": "can I connect my personal phone to CORP-SECURE",
+  "expected_sources": [
+   "SOP-005_WiFi_and_Office_Network.md"
+  ],
+  "key_fact": "no, personal devices only on CORP-GUEST",
+  "type": "direct"
+ },
+ {
+  "question": "teams can't hear me in calls since I plugged into the dock",
+  "expected_sources": [
+   "SOP-006_Teams_Meetings_Audio_Video.md"
+  ],
+  "key_fact": "select correct microphone in Teams Settings > Devices",
+  "type": "direct"
+ },
+ {
+  "question": "the teams console in the meeting room is frozen and the meeting has started",
+  "expected_sources": [
+   "SOP-006_Teams_Meetings_Audio_Video.md"
+  ],
+  "key_fact": "route to Workplace AV with the room name",
+  "type": "direct"
+ },
+ {
+  "question": "how long are teams meeting recordings kept",
+  "expected_sources": [
+   "SOP-006_Teams_Meetings_Audio_Video.md"
+  ],
+  "key_fact": "60 days unless the organiser changes the expiry",
+  "type": "direct"
+ },
+ {
+  "question": "can you give me admin rights so I can install a tool",
+  "expected_sources": [
+   "SOP-007_Software_Installation_and_Licences.md"
+  ],
+  "key_fact": "no local admin; use Software Center / Self Service or a Software Request",
+  "type": "direct"
+ },
+ {
+  "question": "how long does security review take for software that isn't on the approved list",
+  "expected_sources": [
+   "SOP-007_Software_Installation_and_Licences.md"
+  ],
+  "key_fact": "about 5 business days",
+  "type": "direct"
+ },
+ {
+  "question": "I need access to the finance reports shared folder, who approves it",
+  "expected_sources": [
+   "SOP-008_Shared_Drive_and_SharePoint_Access.md"
+  ],
+  "key_fact": "the data owner of the folder",
+  "type": "direct"
+ },
+ {
+  "question": "I moved to a new team and lost access to a folder I used every day",
+  "expected_sources": [
+   "SOP-008_Shared_Drive_and_SharePoint_Access.md"
+  ],
+  "key_fact": "memberships reviewed on transfer and old ones removed",
+  "type": "direct"
+ },
+ {
+  "question": "when is a leaver's account disabled",
+  "expected_sources": [
+   "SOP-009_Onboarding_and_Offboarding.md"
+  ],
+  "key_fact": "18:00 local time on the last working day",
+  "type": "direct"
+ },
+ {
+  "question": "what happens if someone who left doesn't return their laptop",
+  "expected_sources": [
+   "SOP-009_Onboarding_and_Offboarding.md"
+  ],
+  "key_fact": "remote wipe after 5 business days",
+  "type": "direct"
+ },
+ {
+  "question": "new joiner starting monday, when should HR raise the request",
+  "expected_sources": [
+   "SOP-009_Onboarding_and_Offboarding.md"
+  ],
+  "key_fact": "5 business days before the start date",
+  "type": "direct"
+ },
+ {
+  "question": "vpn on my macbook says connected but nothing loads after upgrading macOS",
+  "expected_sources": [
+   "SOP-010_macOS_Device_Support.md"
+  ],
+  "key_fact": "approve the GlobalProtect system extension in Privacy & Security",
+  "type": "distractor"
+ },
+ {
+  "question": "my mac is asking for the filevault recovery key",
+  "expected_sources": [
+   "SOP-010_macOS_Device_Support.md"
+  ],
+  "key_fact": "retrieve from Jamf after identity verification; read it out over a call",
+  "type": "distractor"
+ },
+ {
+  "question": "I deleted a file from my Documents folder last month, can I get it back",
+  "expected_sources": [
+   "SOP-011_Backup_and_File_Recovery.md"
+  ],
+  "key_fact": "OneDrive recycle bin keeps files for 93 days",
+  "type": "distractor"
+ },
+ {
+  "question": "a file on the network share was deleted yesterday, can it be restored",
+  "expected_sources": [
+   "SOP-011_Backup_and_File_Recovery.md"
+  ],
+  "key_fact": "nightly backup kept 35 days; restore request with full path",
+  "type": "distractor"
+ },
+ {
+  "question": "all my files suddenly have a strange extension and won't open",
+  "expected_sources": [
+   "SOP-011_Backup_and_File_Recovery.md"
+  ],
+  "key_fact": "disconnect from the network and raise P1 to SOC",
+  "type": "distractor"
+ },
+ {
+  "question": "can I paste a customer contract into ChatGPT to summarise it",
+  "expected_sources": [
+   "Policy_Acceptable_Use_and_Data_Classification.md"
+  ],
+  "key_fact": "no, confidential data must not go into public AI chatbots",
+  "type": "distractor"
+ },
+ {
+  "question": "I lost my work laptop at the airport",
+  "expected_sources": [
+   "Policy_Acceptable_Use_and_Data_Classification.md"
+  ],
+  "key_fact": "report within 1 hour; P1 security incident; remote wipe",
+  "type": "distractor"
+ },
+ {
+  "question": "can I copy project files to my own USB stick",
+  "expected_sources": [
+   "Policy_Acceptable_Use_and_Data_Classification.md"
+  ],
+  "key_fact": "USB mass storage is blocked; exception needs InfoSec approval",
+  "type": "distractor"
+ },
+ {
+  "question": "what's on the canteen menu today",
+  "expected_sources": [],
+  "key_fact": null,
+  "type": "out_of_scope"
+ },
+ {
+  "question": "how many days of annual leave do I have left",
+  "expected_sources": [],
+  "key_fact": null,
+  "type": "out_of_scope"
+ },
+ {
+  "question": "when is the next salary revision",
+  "expected_sources": [],
+  "key_fact": null,
+  "type": "out_of_scope"
+ },
+ {
+  "question": "how do I book a cab for a client visit",
+  "expected_sources": [],
+  "key_fact": null,
+  "type": "out_of_scope"
+ },
+ {
+  "question": "what is the company's share price today",
+  "expected_sources": [],
+  "key_fact": null,
+  "type": "out_of_scope"
+ },
+ {
+  "question": "how do I configure a Kubernetes ingress controller",
+  "expected_sources": [],
+  "key_fact": null,
+  "type": "out_of_scope"
+ }
+]

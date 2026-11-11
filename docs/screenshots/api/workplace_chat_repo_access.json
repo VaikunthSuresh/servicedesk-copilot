@@ -1,0 +1,31 @@
+{
+  "answer": "Raise a \"Repository Access\" request naming the repository, which requires approval by the repository owner [2].",
+  "sources": [
+    {
+      "source": "DEV-003_Code_Repository_and_Tool_Access.md",
+      "chunk_id": 1,
+      "score": 0.645,
+      "text": "DEV-003: Code Repository, Issue Tracker and Wiki Access (synthetic analogue) > Access Model\n- Access to code repositories is granted per team group, approved by the repository owner.\n- New joiners get their team's groups automatically from the HR role; everything else is requested.\n- External contractors get access only to repositories marked for vendor collaboration."
+    },
+    {
+      "source": "DEV-003_Code_Repository_and_Tool_Access.md",
+      "chunk_id": 2,
+      "score": 0.5567,
+      "text": "DEV-003: Code Repository, Issue Tracker and Wiki Access (synthetic analogue) > Common Requests\n- **Repository access:** raise a \"Repository Access\" request naming the repository; approval by the owner, applied within 4 hours.\n- **SSH key or token problems:** personal access tokens expire every 90 days; create a new one with the minimum scopes needed.\n- **Issue tracker / wiki permissions:** project admins can add members directly; the service desk handles only missing licences."
+    },
+    {
+      "source": "DEV-003_Code_Repository_and_Tool_Access.md",
+      "chunk_id": 0,
+      "score": 0.4332,
+      "text": "DEV-003: Code Repository, Issue Tracker and Wiki Access (synthetic analogue) > Overview\nOwner: Developer Tools Team"
+    },
+    {
+      "source": "DEV-003_Code_Repository_and_Tool_Access.md",
+      "chunk_id": 3,
+      "score": 0.335,
+      "text": "DEV-003: Code Repository, Issue Tracker and Wiki Access (synthetic analogue) > Using Public AI Tools With Code or Documents\nSource code, supplier contracts and other Confidential material must not be pasted into public AI chatbots or code assistants. Use only the approved internal GenAI platform (DEV-001)."
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

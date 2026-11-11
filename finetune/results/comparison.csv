@@ -1,0 +1,3 @@
+model,n_test,accuracy,macro_f1,weighted_f1,latency_ms_per_ticket
+before_zero_shot_bart_mnli,400,0.235,0.2315,0.2315,233.3
+after_finetuned_distilbert,1034,0.4159,0.4208,0.4087,5.0

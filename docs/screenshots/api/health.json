@@ -1,0 +1,6 @@
+{
+  "status": "ok",
+  "classifier_mode": "fine-tuned",
+  "llm_configured": true,
+  "llm_model": "gpt-4o-mini"
+}

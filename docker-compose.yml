@@ -1,0 +1,16 @@
+services:
+  api:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    env_file: backend/.env
+    ports: ["8000:8000"]
+    volumes:
+      - ./data:/app/data                       # vector store + uploads persist
+      - ./finetune/outputs:/app/finetune/outputs   # drop the fine-tuned model here
+      - hf-cache:/app/.hf-cache
+  ui:
+    build: { context: ., dockerfile: frontend/Dockerfile }
+    environment: [API_URL=http://api:8000]
+    ports: ["8501:8501"]
+    depends_on: [api]
+volumes:
+  hf-cache:

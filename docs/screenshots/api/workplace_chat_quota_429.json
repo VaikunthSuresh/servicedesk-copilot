@@ -1,0 +1,31 @@
+{
+  "answer": "A 429 error means the quota is used up; it resets at 00:00 UTC [2].",
+  "sources": [
+    {
+      "source": "SOP-002_Password_Reset_and_Account_Lockout.md",
+      "chunk_id": 4,
+      "score": 0.4161,
+      "text": "SOP-002: Password Reset and Account Lockout > Repeated Lockouts\nRepeated lockouts within a day usually mean an old password is cached on a phone (Outlook/Teams mobile) or a mapped drive. Ask the user to update the password on all devices. If lockouts continue, escalate to IAM (L2) to check the lockout source in the domain controller logs."
+    },
+    {
+      "source": "DEV-001_GenAI_Platform_Access.md",
+      "chunk_id": 3,
+      "score": 0.3666,
+      "text": "DEV-001: Internal GenAI Platform Access and API Keys (synthetic analogue) > Quotas and Errors\n- Default dev quota: 200,000 tokens per day per project. A 429 error means the quota is used up; it resets at 00:00 UTC.\n- Quota increases are requested by the project lead with the expected daily volume.\n- A 401 error usually means an expired key: dev keys expire every 90 days."
+    },
+    {
+      "source": "SOP-002_Password_Reset_and_Account_Lockout.md",
+      "chunk_id": 5,
+      "score": 0.3528,
+      "text": "SOP-002: Password Reset and Account Lockout > Security Note\nIf the user did not trigger the lockout themselves, treat it as a possible attack: priority P1, route to the Security Operations Centre (SOC)."
+    },
+    {
+      "source": "SOP-002_Password_Reset_and_Account_Lockout.md",
+      "chunk_id": 0,
+      "score": 0.3337,
+      "text": "SOP-002: Password Reset and Account Lockout > Overview\nOwner: Identity & Access Management | Applies to: Active Directory / Entra ID accounts"
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

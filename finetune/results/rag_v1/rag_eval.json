@@ -1,0 +1,36 @@
+{
+  "retrieval": {
+    "all_answerable": {
+      "n": 34,
+      "hit@1": 0.9117647058823529,
+      "hit@4": 0.9411764705882353,
+      "mrr": 0.9191176470588235
+    },
+    "direct": {
+      "n": 26,
+      "hit@1": 0.9230769230769231,
+      "hit@4": 0.9615384615384616,
+      "mrr": 0.9326923076923077
+    },
+    "distractor": {
+      "n": 8,
+      "hit@1": 0.875,
+      "hit@4": 0.875,
+      "mrr": 0.875
+    }
+  },
+  "similarity": {
+    "answerable_mean_top": 0.474,
+    "out_of_scope_mean_top": 0.207,
+    "threshold": 0.25
+  },
+  "end_to_end": {
+    "model": "gpt-4o-mini",
+    "key_fact_accuracy": 0.7941176470588235,
+    "faithfulness_mean_1_to_5": 4.235294117647059,
+    "citation_rate": 0.7941176470588235,
+    "false_refusals_on_answerable": 0.5,
+    "out_of_scope_refusal_rate": 1.0,
+    "mean_latency_ms": 1740.725
+  }
+}

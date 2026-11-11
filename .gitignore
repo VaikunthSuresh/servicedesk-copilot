@@ -1,0 +1,23 @@
+# secrets — never commit
+backend/.env
+.env
+
+# environments and caches
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+
+# generated at runtime (rebuilt by scripts/ingest_kb.py / the app)
+data/chroma/
+data/uploads/
+
+# training data and model weights (too large for git; model is shared as a GitHub Release asset)
+data/processed/**/*.csv
+finetune/checkpoints/
+finetune/outputs/
+v2_results/
+
+# local share bundles
+share/
+*.zip

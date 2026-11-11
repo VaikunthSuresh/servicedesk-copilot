@@ -1,0 +1,31 @@
+{
+  "answer": "You need to approve the GlobalProtect system extension in System Settings \u2192 Privacy & Security \u2192 \"Allow\" for Palo Alto Networks. If it still fails, remove GlobalProtect with the uninstaller in Self Service and reinstall [1].",
+  "sources": [
+    {
+      "source": "SOP-010_macOS_Device_Support.md",
+      "chunk_id": 1,
+      "score": 0.5271,
+      "text": "SOP-010: macOS Device Support > VPN on macOS\n- The supported client on macOS is GlobalProtect 6.2 or later from Self Service.\n- After a macOS major upgrade, approve the GlobalProtect system extension: System Settings \u2192 Privacy & Security \u2192 \"Allow\" for Palo Alto Networks. Without this the VPN connects but no traffic passes.\n- If it still fails, remove GlobalProtect with the uninstaller in Self Service and reinstall."
+    },
+    {
+      "source": "SOP-001_VPN_Troubleshooting.md",
+      "chunk_id": 1,
+      "score": 0.5054,
+      "text": "SOP-001: VPN Connectivity Troubleshooting (GlobalProtect / Cisco AnyConnect) > Symptoms\n- VPN disconnects every few minutes, or after an OS/client update.\n- \"Gateway not responding\" or \"Authentication failed\" errors.\n- Connected, but internal sites (intranet, Jira, SAP) do not load."
+    },
+    {
+      "source": "SOP-001_VPN_Troubleshooting.md",
+      "chunk_id": 2,
+      "score": 0.4302,
+      "text": "SOP-001: VPN Connectivity Troubleshooting (GlobalProtect / Cisco AnyConnect) > L1 Resolution Steps\n1. Confirm the user's internet works without VPN (open a public site). If not, follow SOP-004 Network Basics.\n2. Ask the user to sign out of the VPN client, quit it fully from the system tray, and reconnect.\n3. Check the client version. Supported: GlobalProtect 6.2 or later. Older clients must be updated from the Software Center.\n4. If disconnects started after a Windows update, restart the \"PanGPS\" service (GlobalProtect) or \"Cisco AnyConnect Secure Mobility Agent\" service from services.msc.\n5. Switch the gateway to the nearest region (Chennai, Hyderabad, Munich) in the client settings.\n6. Flush DNS: run `ipconfig /flushdns` in an elevated Command Prompt, then reconnect.\n7. If the user is on home Wi-Fi, ask them to disable \"IPv6\" on the Wi-Fi adapter as a temporary workaround."
+    },
+    {
+      "source": "SOP-005_WiFi_and_Office_Network.md",
+      "chunk_id": 2,
+      "score": 0.3281,
+      "text": "SOP-005: Corporate Wi-Fi and Office Network Access > Laptop Cannot Join CORP-SECURE\n1. Confirm the laptop shows a valid device certificate (Windows: certlm.msc \u2192 Personal \u2192 Certificates; macOS: Keychain Access \u2192 System).\n2. Certificates renew automatically every 12 months, but only while the laptop connects to the corporate network or VPN at least once every 30 days. A laptop that has been offline longer must be connected by Ethernet in the office to renew.\n3. Forget the CORP-SECURE network and rejoin.\n4. If several users on the same floor cannot connect, raise a P2 for Network Operations \u2014 likely an access point fault. Note the floor and the nearest meeting room name."
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

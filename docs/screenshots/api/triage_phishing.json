@@ -1,0 +1,75 @@
+{
+  "classification": {
+    "label": "Technical & IT Support",
+    "score": 0.533,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Technical & IT Support",
+        "score": 0.533
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.2699
+      },
+      {
+        "label": "Billing and Payments",
+        "score": 0.1394
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "neutral",
+    "score": 0.5559,
+    "urgency": "P1",
+    "urgency_signals": [
+      "security"
+    ],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "I got an email from 'IT Support' asking me to re-enter my password on a link. I clicked it and typed my password before I realised it looked suspicious.",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "Yes, you should reset your password immediately and report the phishing email. \n\n1. Reset the user's password as per SOP-002.\n2. Revoke sessions in Entra ID.\n3. Route the incident to SOC as a Priority 1 (P1) issue. \n4. Advise the user to use the \"Report Phishing\" button in Outlook instead of forwarding the email [1].",
+    "sources": [
+      {
+        "source": "SOP-003_MFA_and_Email_Issues.md",
+        "chunk_id": 3,
+        "score": 0.5212,
+        "text": "SOP-003: MFA Re-registration and Outlook/Email Issues > Suspected Phishing Email\nDo not ask the user to forward the email. Ask them to use the \"Report Phishing\" button in Outlook. If the user clicked a link or entered credentials, reset their password immediately (SOP-002), revoke sessions in Entra ID, and route to SOC as P1."
+      },
+      {
+        "source": "SOP-002_Password_Reset_and_Account_Lockout.md",
+        "chunk_id": 3,
+        "score": 0.4384,
+        "text": "SOP-002: Password Reset and Account Lockout > Agent-Assisted Reset\n1. Verify identity as per policy.\n2. In AD Users and Computers, right-click the account, choose \"Reset Password\", tick \"User must change password at next logon\".\n3. If the account is locked, tick \"Unlock account\".\n4. Log the verification method in the ticket. Never send the temporary password by email; share it by phone."
+      },
+      {
+        "source": "SOP-002_Password_Reset_and_Account_Lockout.md",
+        "chunk_id": 1,
+        "score": 0.3611,
+        "text": "SOP-002: Password Reset and Account Lockout > Policy\n- Passwords expire every 90 days and must be at least 14 characters.\n- Accounts lock after 5 failed attempts in 15 minutes; lockout lasts 30 minutes.\n- Service desk agents must verify identity (employee ID + manager name, or a callback to the registered mobile) before any reset. Never reset a password based on an email request alone."
+      },
+      {
+        "source": "SOP-002_Password_Reset_and_Account_Lockout.md",
+        "chunk_id": 4,
+        "score": 0.4285,
+        "text": "SOP-002: Password Reset and Account Lockout > Repeated Lockouts\nRepeated lockouts within a day usually mean an old password is cached on a phone (Outlook/Teams mobile) or a mapped drive. Ask the user to update the password on all devices. If lockouts continue, escalate to IAM (L2) to check the lockout source in the domain controller logs."
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for bringing this issue to our attention. Your ticket has been assigned to the Technical & IT Support team with a Priority 1 status. \n\nTo address the situation, please follow these initial steps:  \n1. Reset your password immediately as per SOP-002.  \n2. Revoke any active sessions in Entra ID.  \n\nNext, our team will escalate this incident to the Security Operations Center (SOC) for further investigation. Additionally, please use the \"Report Phishing\" button in Outlook to report the suspicious email. If you need further assistance, feel free to reach out.",
+  "latency_ms": {
+    "classify": 247.0,
+    "sentiment": 15.5,
+    "summarize": 0.0,
+    "rag": 2443.3,
+    "reply": 2406.3,
+    "total": 5112.1
+  }
+}

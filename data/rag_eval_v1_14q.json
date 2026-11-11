@@ -1,0 +1,16 @@
+[
+ {"question": "My VPN drops every few minutes after the Windows update", "expected_source": "SOP-001_VPN_Troubleshooting.md"},
+ {"question": "Which GlobalProtect version is supported?", "expected_source": "SOP-001_VPN_Troubleshooting.md"},
+ {"question": "How many failed logins before an account locks?", "expected_source": "SOP-002_Password_Reset_and_Account_Lockout.md"},
+ {"question": "How should an agent verify identity before resetting a password?", "expected_source": "SOP-002_Password_Reset_and_Account_Lockout.md"},
+ {"question": "My account keeps getting locked several times a day", "expected_source": "SOP-002_Password_Reset_and_Account_Lockout.md"},
+ {"question": "I got a new phone and can't approve MFA prompts", "expected_source": "SOP-003_MFA_and_Email_Issues.md"},
+ {"question": "Outlook shows Disconnected and won't sync", "expected_source": "SOP-003_MFA_and_Email_Issues.md"},
+ {"question": "I clicked a link in a phishing email and typed my password", "expected_source": "SOP-003_MFA_and_Email_Issues.md"},
+ {"question": "Laptop is very slow when Teams and Excel are open", "expected_source": "SOP-004_Laptop_Hardware_and_Printer.md"},
+ {"question": "Laptop asks for BitLocker recovery key", "expected_source": "SOP-004_Laptop_Hardware_and_Printer.md"},
+ {"question": "Print jobs are stuck in the queue", "expected_source": "SOP-004_Laptop_Hardware_and_Printer.md"},
+ {"question": "What is the resolution SLA for a P2 ticket?", "expected_source": "Policy_Ticket_Priority_and_SLA.md"},
+ {"question": "Which team handles payroll system issues?", "expected_source": "Policy_Ticket_Priority_and_SLA.md"},
+ {"question": "When must L1 escalate a ticket to L2?", "expected_source": "Policy_Ticket_Priority_and_SLA.md"}
+]

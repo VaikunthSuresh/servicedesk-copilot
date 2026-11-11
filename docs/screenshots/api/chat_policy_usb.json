@@ -1,0 +1,31 @@
+{
+  "answer": "No, USB mass storage is blocked on company laptops unless you have Information Security approval and an encrypted company USB drive [1].",
+  "sources": [
+    {
+      "source": "Policy_Acceptable_Use_and_Data_Classification.md",
+      "chunk_id": 3,
+      "score": 0.3756,
+      "text": "Policy: Acceptable Use and Data Classification > USB Storage\nUSB mass storage is blocked on company laptops. Exceptions require Information Security approval and an encrypted company USB drive."
+    },
+    {
+      "source": "SOP-011_Backup_and_File_Recovery.md",
+      "chunk_id": 1,
+      "score": 0.2544,
+      "text": "SOP-011: Backup and File Recovery > What Is Backed Up\n- Desktop, Documents and Pictures folders are redirected to OneDrive (Known Folder Move) and are backed up automatically.\n- Files saved elsewhere on the laptop (for example `C:\\Data`) are **not** backed up."
+    },
+    {
+      "source": "SOP-011_Backup_and_File_Recovery.md",
+      "chunk_id": 3,
+      "score": 0.245,
+      "text": "SOP-011: Backup and File Recovery > Shared Drive Restore\nFiles on network shares are backed up nightly and kept for 35 days. Raise a restore request with the full path and the approximate time of deletion; restores are done by the Storage team within 1 business day."
+    },
+    {
+      "source": "SOP-011_Backup_and_File_Recovery.md",
+      "chunk_id": 2,
+      "score": 0.2245,
+      "text": "SOP-011: Backup and File Recovery > Restoring a Deleted File\n1. Check the OneDrive recycle bin: deleted files are kept for 93 days.\n2. For an earlier version of a file, use Version History in OneDrive or SharePoint (the last 500 versions are kept).\n3. To roll back many files at once (for example after ransomware), use \"Restore your OneDrive\" to a point in the last 30 days."
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

@@ -1,0 +1,73 @@
+{
+  "classification": {
+    "label": "Technical & IT Support",
+    "score": 0.763,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Technical & IT Support",
+        "score": 0.763
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.2005
+      },
+      {
+        "label": "Sales and Pre-Sales",
+        "score": 0.0202
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "negative",
+    "score": 0.8444,
+    "urgency": "P2",
+    "urgency_signals": [],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "My laptop has been really slow for the last week, especially when Teams and Excel are open together.",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "Yes, you can troubleshoot the slow laptop by following these steps:\n\n1. Check free disk space; if it's below 10%, run Disk Cleanup and clear the Downloads folder with the user's consent.\n2. Open Task Manager and check for processes using more than 80% CPU or memory for several minutes.\n3. Ensure pending Windows updates are installed and the laptop has been restarted in the last 7 days.\n4. If the laptop is older than 4 years, raise a hardware refresh request instead of continuing to troubleshoot [1].",
+    "sources": [
+      {
+        "source": "SOP-004_Laptop_Hardware_and_Printer.md",
+        "chunk_id": 1,
+        "score": 0.5377,
+        "text": "SOP-004: Laptop Hardware, Network Basics and Printer Issues > Laptop Running Slow\n1. Check free disk space; below 10% free, run Disk Cleanup and clear the Downloads folder with the user's consent.\n2. Open Task Manager and check for processes using more than 80% CPU or memory for several minutes.\n3. Make sure pending Windows updates are installed and the laptop has been restarted in the last 7 days.\n4. If the laptop is older than 4 years, raise a hardware refresh request instead of continuing to troubleshoot."
+      },
+      {
+        "source": "SOP-010_macOS_Device_Support.md",
+        "chunk_id": 4,
+        "score": 0.3482,
+        "text": "SOP-010: macOS Device Support > Slow Mac\nCheck Activity Monitor for high memory pressure (yellow or red). Spotlight indexing after an upgrade can slow a Mac for up to 24 hours; this is expected."
+      },
+      {
+        "source": "SOP-006_Teams_Meetings_Audio_Video.md",
+        "chunk_id": 2,
+        "score": 0.3224,
+        "text": "SOP-006: Microsoft Teams Meetings, Audio and Video > Camera Not Working\n- Close other apps that may be using the camera (Zoom, browser tabs).\n- Corporate laptops with a privacy shutter: make sure it is open.\n- If the camera is missing in Device Manager, raise a hardware ticket for End User Computing."
+      },
+      {
+        "source": "SOP-005_WiFi_and_Office_Network.md",
+        "chunk_id": 2,
+        "score": 0.2371,
+        "text": "SOP-005: Corporate Wi-Fi and Office Network Access > Laptop Cannot Join CORP-SECURE\n1. Confirm the laptop shows a valid device certificate (Windows: certlm.msc \u2192 Personal \u2192 Certificates; macOS: Keychain Access \u2192 System).\n2. Certificates renew automatically every 12 months, but only while the laptop connects to the corporate network or VPN at least once every 30 days. A laptop that has been offline longer must be connected by Ethernet in the office to renew.\n3. Forget the CORP-SECURE network and rejoin.\n4. If several users on the same floor cannot connect, raise a P2 for Network Operations \u2014 likely an access point fault. Note the floor and the nearest meeting room name."
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for reaching out regarding your laptop's performance issues. Your ticket has been assigned to the Technical & IT Support team with a priority level of P2.\n\nTo start troubleshooting, please check your free disk space; if it's below 10%, we recommend running Disk Cleanup and clearing your Downloads folder with your consent. Additionally, open Task Manager to identify any processes using over 80% CPU or memory for an extended period.\n\nOnce you've completed these steps, please update us on your findings. The team will review your case and provide further assistance based on the results. Thank you for your cooperation!",
+  "latency_ms": {
+    "classify": 97.1,
+    "sentiment": 22.6,
+    "summarize": 0.0,
+    "rag": 2534.4,
+    "reply": 2560.7,
+    "total": 5214.8
+  }
+}

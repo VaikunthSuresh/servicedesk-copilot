@@ -1,0 +1,76 @@
+{
+  "classification": {
+    "label": "Technical & IT Support",
+    "score": 0.7421,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Technical & IT Support",
+        "score": 0.7421
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.1768
+      },
+      {
+        "label": "Sales and Pre-Sales",
+        "score": 0.0566
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "negative",
+    "score": 0.8749,
+    "urgency": "P1",
+    "urgency_signals": [
+      "outage",
+      "deadline"
+    ],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "VPN keeps disconnecting every 10 minutes since this morning's Windows update. I have a client demo at 3pm today and can't access SAP or Jira. Please help urgently!",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "Restart the \"PanGPS\" service (GlobalProtect) or \"Cisco AnyConnect Secure Mobility Agent\" service from services.msc. \n\n1. Confirm the user's internet works without VPN (open a public site). If not, follow SOP-004 Network Basics.\n2. Ask the user to sign out of the VPN client, quit it fully from the system tray, and reconnect.\n3. Check the client version; ensure it is GlobalProtect 6.2 or later.\n4. If disconnects started after a Windows update, restart the \"PanGPS\" service (GlobalProtect) or \"Cisco AnyConnect Secure Mobility Agent\" service from services.msc.\n5. Switch the gateway to the nearest region (Chennai, Hyderabad, Munich) in the client settings.\n6. Flush DNS: run `ipconfig /flushdns` in an elevated Command Prompt, then reconnect.\n7. If the user is on home Wi-Fi, ask them to disable \"IPv6\" on the Wi-Fi adapter as a temporary workaround.\n\nIf these steps fail, escalate to Network Operations (L2) with priority P1 since you are experiencing a critical issue affecting your demo [3].",
+    "sources": [
+      {
+        "source": "SOP-001_VPN_Troubleshooting.md",
+        "chunk_id": 2,
+        "score": 0.648,
+        "text": "SOP-001: VPN Connectivity Troubleshooting (GlobalProtect / Cisco AnyConnect) > L1 Resolution Steps\n1. Confirm the user's internet works without VPN (open a public site). If not, follow SOP-004 Network Basics.\n2. Ask the user to sign out of the VPN client, quit it fully from the system tray, and reconnect.\n3. Check the client version. Supported: GlobalProtect 6.2 or later. Older clients must be updated from the Software Center.\n4. If disconnects started after a Windows update, restart the \"PanGPS\" service (GlobalProtect) or \"Cisco AnyConnect Secure Mobility Agent\" service from services.msc.\n5. Switch the gateway to the nearest region (Chennai, Hyderabad, Munich) in the client settings.\n6. Flush DNS: run `ipconfig /flushdns` in an elevated Command Prompt, then reconnect.\n7. If the user is on home Wi-Fi, ask them to disable \"IPv6\" on the Wi-Fi adapter as a temporary workaround."
+      },
+      {
+        "source": "SOP-001_VPN_Troubleshooting.md",
+        "chunk_id": 1,
+        "score": 0.6475,
+        "text": "SOP-001: VPN Connectivity Troubleshooting (GlobalProtect / Cisco AnyConnect) > Symptoms\n- VPN disconnects every few minutes, or after an OS/client update.\n- \"Gateway not responding\" or \"Authentication failed\" errors.\n- Connected, but internal sites (intranet, Jira, SAP) do not load."
+      },
+      {
+        "source": "SOP-001_VPN_Troubleshooting.md",
+        "chunk_id": 4,
+        "score": 0.5131,
+        "text": "SOP-001: VPN Connectivity Troubleshooting (GlobalProtect / Cisco AnyConnect) > Escalation\nEscalate to Network Operations (L2) with priority P2 if steps 1\u20137 fail, or P1 if more than 10 users at one site report the same issue (possible gateway outage). Attach the client log from `%ProgramData%\\Palo Alto Networks\\GlobalProtect\\` to the ticket."
+      },
+      {
+        "source": "SOP-005_WiFi_and_Office_Network.md",
+        "chunk_id": 2,
+        "score": 0.4146,
+        "text": "SOP-005: Corporate Wi-Fi and Office Network Access > Laptop Cannot Join CORP-SECURE\n1. Confirm the laptop shows a valid device certificate (Windows: certlm.msc \u2192 Personal \u2192 Certificates; macOS: Keychain Access \u2192 System).\n2. Certificates renew automatically every 12 months, but only while the laptop connects to the corporate network or VPN at least once every 30 days. A laptop that has been offline longer must be connected by Ethernet in the office to renew.\n3. Forget the CORP-SECURE network and rejoin.\n4. If several users on the same floor cannot connect, raise a P2 for Network Operations \u2014 likely an access point fault. Note the floor and the nearest meeting room name."
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for reaching out regarding the VPN disconnection issue. I have assigned your ticket to the Technical & IT Support team with a priority level of P1 due to the urgency of your client demo.\n\nTo start resolving the issue, please follow these steps:\n1. Confirm that your internet connection works without the VPN by opening a public site.\n2. Sign out of the VPN client, fully quit it from the system tray, and then reconnect.\n\nOnce you've completed these steps, please let us know the results. If the issue persists, we will escalate it to Network Operations for further assistance. We\u2019re here to help!",
+  "latency_ms": {
+    "classify": 5374.1,
+    "sentiment": 1461.4,
+    "summarize": 0.0,
+    "rag": 13814.2,
+    "reply": 2793.9,
+    "total": 23443.6
+  }
+}

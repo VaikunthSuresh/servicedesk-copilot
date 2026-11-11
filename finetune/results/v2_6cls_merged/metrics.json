@@ -1,0 +1,18 @@
+{
+  "before_zero_shot_bart_mnli": {
+    "model": "before_zero_shot_bart_mnli",
+    "n_test": 396,
+    "accuracy": 0.3232,
+    "macro_f1": 0.3269,
+    "weighted_f1": 0.3269,
+    "latency_ms_per_ticket": 206.0
+  },
+  "after_finetuned_roberta-base": {
+    "model": "after_finetuned_roberta-base",
+    "n_test": 2294,
+    "accuracy": 0.5532,
+    "macro_f1": 0.5218,
+    "weighted_f1": 0.5497,
+    "latency_ms_per_ticket": 10.6
+  }
+}

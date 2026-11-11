@@ -1,0 +1,73 @@
+{
+  "classification": {
+    "label": "Sales and Pre-Sales",
+    "score": 0.9018,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Sales and Pre-Sales",
+        "score": 0.9018
+      },
+      {
+        "label": "Returns and Exchanges",
+        "score": 0.0414
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.0385
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "neutral",
+    "score": 0.6612,
+    "urgency": "P3",
+    "urgency_signals": [],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "Is it okay if I paste a supplier contract PDF into a public AI chatbot to get a quick summary? It would save me a lot of time this week.",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "No, you must not paste supplier contracts or any Confidential material into public AI chatbots; instead, use only the approved internal GenAI platform [1][2].",
+    "sources": [
+      {
+        "source": "Policy_Acceptable_Use_and_Data_Classification.md",
+        "chunk_id": 2,
+        "score": 0.5574,
+        "text": "Policy: Acceptable Use and Data Classification > Generative AI Tools\nEmployees may use only company-approved AI tools. Confidential or Strictly Confidential data must never be pasted into public AI chatbots."
+      },
+      {
+        "source": "DEV-003_Code_Repository_and_Tool_Access.md",
+        "chunk_id": 3,
+        "score": 0.4672,
+        "text": "DEV-003: Code Repository, Issue Tracker and Wiki Access (synthetic analogue) > Using Public AI Tools With Code or Documents\nSource code, supplier contracts and other Confidential material must not be pasted into public AI chatbots or code assistants. Use only the approved internal GenAI platform (DEV-001)."
+      },
+      {
+        "source": "DEV-001_GenAI_Platform_Access.md",
+        "chunk_id": 2,
+        "score": 0.2664,
+        "text": "DEV-001: Internal GenAI Platform Access and API Keys (synthetic analogue) > Requesting an API Key\n1. Raise an \"AI Platform Access\" request with the project ID from the AI use-case register.\n2. The project lead approves the request.\n3. The AI Platform Team issues the dev key within 2 business days. Test and prod keys additionally need a completed AI risk assessment.\n4. Keys are stored in the team's secrets vault. Never put keys in source code, tickets, chat or email."
+      },
+      {
+        "source": "DEV-001_GenAI_Platform_Access.md",
+        "chunk_id": 0,
+        "score": 0.2449,
+        "text": "DEV-001: Internal GenAI Platform Access and API Keys (synthetic analogue) > Overview\nOwner: AI Platform Team | Applies to: engineers building GenAI features"
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for reaching out regarding your inquiry about using a public AI chatbot for summarizing a supplier contract. This issue has been assigned to the Sales and Pre-Sales team with a priority level of P3.\n\nAs a first step, please refrain from pasting any supplier contracts or confidential material into public AI chatbots. Instead, I recommend utilizing our approved internal GenAI platform for such tasks. \n\nNext, the assigned team will follow up with you to ensure you have access to the internal platform and provide any additional guidance you may need. If you have further questions, feel free to ask!",
+  "latency_ms": {
+    "classify": 206.3,
+    "sentiment": 14.8,
+    "summarize": 0.0,
+    "rag": 1681.9,
+    "reply": 2552.1,
+    "total": 4455.1
+  }
+}

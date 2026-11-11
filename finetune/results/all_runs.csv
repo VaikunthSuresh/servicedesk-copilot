@@ -1,0 +1,5 @@
+run,model,n_test,accuracy,macro_f1,weighted_f1,latency_ms_per_ticket
+v2_6cls_merged,before_zero_shot_bart_mnli,396,0.3232,0.3269,0.3269,206.0
+v2_6cls_merged,after_finetuned_roberta-base,2294,0.5532,0.5218,0.5497,10.6
+v2_8cls,before_zero_shot_bart_mnli,400,0.1975,0.1805,0.1805,275.3
+v2_8cls,after_finetuned_roberta-base,2294,0.4281,0.4517,0.4192,10.1
