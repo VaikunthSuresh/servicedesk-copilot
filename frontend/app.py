@@ -9,11 +9,36 @@ import streamlit as st
 API = os.getenv("API_URL", "http://localhost:8000").rstrip("/") + "/api/v1"
 PRIORITY_COLOUR = {"P1": "🔴", "P2": "🟠", "P3": "🟢"}
 SAMPLES = {
+    # --- IT service desk (Sections I and III) ---
     "VPN outage before demo": "VPN keeps disconnecting every 10 minutes since this morning's Windows update. "
                               "I have a client demo at 3pm today and can't access SAP or Jira. Please help urgently!",
     "Suspicious email": "I got an email from 'IT Support' asking me to re-enter my password on a link. I clicked it "
                         "and typed my password before I realised it looked suspicious.",
     "Slow laptop": "My laptop has been really slow for the last week, especially when Teams and Excel are open together.",
+    "Email outage for the whole team": "Is there planned maintenance on the email servers tonight? Since 9pm nobody in "
+                                       "our team can send or receive mail in Outlook and we have month-end reports due.",
+    "Charged twice for a licence": "We were charged twice for our software licence renewal this month. The same invoice "
+                                   "appears two times on the company card statement. Please refund the duplicate payment.",
+    "Return a damaged headset": "The headset delivered last week arrived with a broken microphone. How do I return it "
+                                "and get a replacement?",
+    "Pricing for 50 more licences": "We plan to add 50 more user licences next quarter. Can someone share pricing and "
+                                    "any volume discount before our budget meeting on Friday?",
+    "Long ticket (shows the summariser)": (
+        "Hi team, sorry for the long message. I changed my phone over the weekend because the old one stopped charging, "
+        "and I set up WhatsApp and my personal apps without any trouble. On Monday morning I tried to log in to my "
+        "laptop and Outlook, and the Microsoft Authenticator app on the new phone never shows any approval prompt, so "
+        "I am stuck at the sign-in screen. I tried restarting both the phone and the laptop twice and also reinstalled "
+        "the Authenticator app, but nothing changed. A colleague said I might need IT to reset something on my account. "
+        "I have a project review with my manager at 2pm today and all my slides are in OneDrive, so I really need to get "
+        "back in before then. Could someone please help me as soon as possible? Thanks a lot."),
+    "Out of scope (chatbot should decline)": "What is on the canteen menu today, and is the office gym open on Saturday?",
+    # --- Workplace demo (Section IV): upload data/workplace/*.md in the Knowledge base tab first ---
+    "Workplace: GenAI API key": "Hi, I joined the GenAI team last week and still don't have an API key for the internal "
+                                "LLM platform. Our proof-of-concept demo to the business is on Friday, can this be sped up?",
+    "Workplace: cloud sandbox blocked": "Since this morning all our dev pipelines fail with 'resource creation denied' in "
+                                        "the cloud sandbox. The whole team is blocked and we cannot deploy anything to test.",
+    "Workplace: public AI chatbot": "Is it okay if I paste a supplier contract PDF into a public AI chatbot to get a quick "
+                                    "summary? It would save me a lot of time this week.",
 }
 
 st.set_page_config(page_title="IT Service Desk Copilot", page_icon="🎫", layout="wide")
