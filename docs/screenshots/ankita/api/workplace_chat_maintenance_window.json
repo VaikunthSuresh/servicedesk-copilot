@@ -1,0 +1,31 @@
+{
+  "answer": "The maintenance window for the data platform is Sundays from 02:00-06:00 IST, and pipelines are paused during this window [1].",
+  "sources": [
+    {
+      "source": "OPS-003_Platform_Access_Availability_and_Priority.md",
+      "chunk_id": 2,
+      "score": 0.596,
+      "text": "OPS-003: Platform Access, Availability and Ticket Priority (synthetic analogue) > Availability and maintenance window\n- Planned maintenance: **Sundays 02:00-06:00 IST**. Scheduled ADF triggers and Databricks job schedules are **paused** during the window and resume afterwards.\n- Unplanned outages are announced on the platform status page."
+    },
+    {
+      "source": "OPS-003_Platform_Access_Availability_and_Priority.md",
+      "chunk_id": 1,
+      "score": 0.4041,
+      "text": "OPS-003: Platform Access, Availability and Ticket Priority (synthetic analogue) > Access requests\n- Workspace access and Unity Catalog permissions are granted to Azure AD (Entra ID) groups, never to individual users.\n- Read access to a catalog schema needs approval from the **data owner** of that schema. A line manager's approval alone is not enough; requests without data-owner approval are sent back.\n- Raise access as a ServiceNow **service request** (not an incident), naming the schema and the business need. Once approved, access is applied within 1 business day.\n- Service principals for pipelines are requested by the pipeline owner, never by end users."
+    },
+    {
+      "source": "OPS-001_ADF_Pipeline_Failure_Runbook.md",
+      "chunk_id": 0,
+      "score": 0.4375,
+      "text": "OPS-001: Azure Data Factory (ADF) Pipeline Failure Runbook (synthetic analogue) > Overview\nOwner: Data Platform Operations\n\nSYNTHETIC document written for a university assignment. Not a real company runbook; pipeline names and times are invented."
+    },
+    {
+      "source": "DEV-002_Cloud_Sandbox_and_CI.md",
+      "chunk_id": 2,
+      "score": 0.3833,
+      "text": "DEV-002: Cloud Sandbox Accounts and CI/CD Pipeline Issues (synthetic analogue) > Pipeline Failures\n1. Check the platform status page first: a known incident means the ticket is linked to it and no further troubleshooting is needed.\n2. \"No runner available\" errors: shared runners are limited to 20 concurrent jobs per team; queue or cancel old jobs.\n3. Pipelines failing with \"quota exceeded\" or \"resource creation denied\" in the sandbox usually mean the budget limit has been reached.\n4. Credential errors in pipelines: rotate the service account secret in the vault; secrets expire every 90 days."
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

@@ -1,0 +1,31 @@
+{
+  "answer": "The materiality threshold for raising a P1 balance mismatch is USD 1,000,000 or more for one product and business unit, or if it changes a regulatory ratio that is reported that day [1].",
+  "sources": [
+    {
+      "source": "DPM-003_Data_Issue_Priority_and_Materiality.md",
+      "chunk_id": 1,
+      "score": 0.6067,
+      "text": "DPM-003: Data Issue Priority and Materiality (synthetic analogue) > Materiality\nA balance mismatch is **material** if it is USD 1,000,000 equivalent or more for one product and business unit, or if it changes a regulatory ratio that is reported that day."
+    },
+    {
+      "source": "DPM-003_Data_Issue_Priority_and_Materiality.md",
+      "chunk_id": 2,
+      "score": 0.4781,
+      "text": "DPM-003: Data Issue Priority and Materiality (synthetic analogue) > Priority matrix\n| Priority | When | First analysis due | Fix or explanation due |\n|---|---|---|---|\n| P1 \u2013 Critical | Material mismatch (USD 1,000,000 or more), or any mismatch that blocks a same-day regulatory submission such as the liquidity (LCR) report | 1 hour | Before the submission deadline |\n| P2 \u2013 High | USD 100,000 to 1,000,000, or blocks a report due within 3 business days | 4 hours | 1 business day |\n| P3 \u2013 Normal | Below USD 100,000, or tagging errors with no report due within 3 business days | 1 business day | 3 business days |\n| P4 \u2013 Low | Questions, clarifications, documentation requests | 2 business days | 5 business days |"
+    },
+    {
+      "source": "DPM-003_Data_Issue_Priority_and_Materiality.md",
+      "chunk_id": 4,
+      "score": 0.4064,
+      "text": "DPM-003: Data Issue Priority and Materiality (synthetic analogue) > Escalation\n- P1 tickets are escalated to the Data Production lead immediately and updated every 30 minutes until resolved.\n- If a P1 cannot be fixed before the submission deadline, the regulatory-reporting team is informed so the submission can carry an explanation."
+    },
+    {
+      "source": "DPM-001_Feed_Arrival_and_Reconciliation.md",
+      "chunk_id": 2,
+      "score": 0.3727,
+      "text": "DPM-001: Feed Arrival and Reconciliation (synthetic analogue) > First checks for any balance mismatch\n1. Check the feed-arrival dashboard: did the feed arrive, and on time?\n2. Compare the record count and the control total in the control file with what was loaded. A difference means records were rejected or dropped during load.\n3. Check the load-rejection log for the date and product.\n4. Check whether a reference-data change was made in the last 5 business days (see DPM-002).\n5. Only after these checks, compare against the source ledger at account level."
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

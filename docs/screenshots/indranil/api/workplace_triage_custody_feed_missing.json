@@ -1,0 +1,73 @@
+{
+  "classification": {
+    "label": "Billing and Payments",
+    "score": 0.9543,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Billing and Payments",
+        "score": 0.9543
+      },
+      {
+        "label": "Returns and Exchanges",
+        "score": 0.0338
+      },
+      {
+        "label": "Technical & IT Support",
+        "score": 0.0047
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "negative",
+    "score": 0.6751,
+    "urgency": "P2",
+    "urgency_signals": [],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "The custody and trust feed did not arrive this morning. All downstream reports show zero balances for custody accounts.",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "Yes, you should contact the source system's support team and record the expected arrival time on the ticket [1].",
+    "sources": [
+      {
+        "source": "DPM-001_Feed_Arrival_and_Reconciliation.md",
+        "chunk_id": 3,
+        "score": 0.4287,
+        "text": "DPM-001: Feed Arrival and Reconciliation (synthetic analogue) > Missing or late feed\n- Typical sign: downstream reports show zero balances for a whole product or business unit.\n- Contact the source system's support team and record the expected arrival time on the ticket.\n- Once the file arrives, rerun the load for that business date and confirm the control totals match.\n- A missing feed that blocks a same-day regulatory submission is P1 (see DPM-003); otherwise P2."
+      },
+      {
+        "source": "DPM-001_Feed_Arrival_and_Reconciliation.md",
+        "chunk_id": 2,
+        "score": 0.4209,
+        "text": "DPM-001: Feed Arrival and Reconciliation (synthetic analogue) > First checks for any balance mismatch\n1. Check the feed-arrival dashboard: did the feed arrive, and on time?\n2. Compare the record count and the control total in the control file with what was loaded. A difference means records were rejected or dropped during load.\n3. Check the load-rejection log for the date and product.\n4. Check whether a reference-data change was made in the last 5 business days (see DPM-002).\n5. Only after these checks, compare against the source ledger at account level."
+      },
+      {
+        "source": "DPM-001_Feed_Arrival_and_Reconciliation.md",
+        "chunk_id": 1,
+        "score": 0.2489,
+        "text": "DPM-001: Feed Arrival and Reconciliation (synthetic analogue) > Feed SLAs\n- Source systems deliver daily feed files by 06:00 IST. Liquidity-relevant feeds (deposits, loans, cash and due) are critical: a delay blocks the same-day liquidity (LCR) submission.\n- Each feed file comes with a control file holding the record count and the control total of balances."
+      },
+      {
+        "source": "DPM-001_Feed_Arrival_and_Reconciliation.md",
+        "chunk_id": 4,
+        "score": 0.2257,
+        "text": "DPM-001: Feed Arrival and Reconciliation (synthetic analogue) > Reruns\nA rerun replaces the full business date for that feed. Notify the report owners before a rerun after 12:00 IST, because downstream reports will change."
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for bringing this issue to our attention. The Billing and Payments team has been assigned to your ticket with a priority level of P2. \n\nTo begin resolving this, please contact the source system's support team to inquire about the feed status. Additionally, record the expected arrival time on the ticket for tracking purposes. \n\nOnce you provide this information, our team will follow up and ensure that the issue is addressed promptly. If you have any further questions or updates, please feel free to reach out.",
+  "latency_ms": {
+    "classify": 209.5,
+    "sentiment": 16.2,
+    "summarize": 0.0,
+    "rag": 883.0,
+    "reply": 1911.0,
+    "total": 3019.7
+  }
+}

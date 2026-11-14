@@ -1,0 +1,31 @@
+{
+  "answer": "A cash and due from banks balance belongs to the \"Cash and Due\" product category, and its business unit tagging is owned by the Reference Data team [1][2].",
+  "sources": [
+    {
+      "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+      "chunk_id": 1,
+      "score": 0.5747,
+      "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > Product categories\nAfter loading, the product-segregation system assigns every record to one product category:\n\n| Category | Examples |\n|---|---|\n| OTC derivatives | Interest-rate swaps, FX forwards traded bilaterally |\n| Exchange-traded derivatives (ETD) | Listed futures and options |\n| Loans | Term loans, overdrafts, trade finance |\n| Deposits | Current, savings and term deposits |\n| Other derivatives | Embedded and structured derivatives |\n| Custody and trust | Assets held in custody or under trust |\n| Cash and Due | Cash, and balances due from other banks |"
+    },
+    {
+      "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+      "chunk_id": 2,
+      "score": 0.5524,
+      "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > Business unit and organisational tagging\n- Each record is tagged with a business unit (BU), an organisational unit and its reporting keys, using the organisational hierarchy maintained by the **Reference Data team**.\n- The Reference Data team owns the tagging rules and the hierarchy. Data Production Management applies them; it does not change them."
+    },
+    {
+      "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+      "chunk_id": 4,
+      "score": 0.4407,
+      "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > How a tagging fix is made\n1. Identify the affected records, product and business dates.\n2. Raise a correction request with the Reference Data team, with the effective date.\n3. After the hierarchy is corrected, reprocess the affected business dates and confirm the BU totals in the report."
+    },
+    {
+      "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+      "chunk_id": 0,
+      "score": 0.5301,
+      "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > Overview\nOwner: Data Production Management, with the Reference Data team\n\nSYNTHETIC document written for a university assignment. Not a real bank procedure."
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

@@ -1,0 +1,75 @@
+{
+  "classification": {
+    "label": "Billing and Payments",
+    "score": 0.8598,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Billing and Payments",
+        "score": 0.8598
+      },
+      {
+        "label": "Returns and Exchanges",
+        "score": 0.0463
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.0413
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "negative",
+    "score": 0.6468,
+    "urgency": "P2",
+    "urgency_signals": [
+      "deadline"
+    ],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "Today's liquidity report shows the Deposits balance for the Mumbai business unit 2.4 million USD lower than the source ledger. The LCR submission is due at 5pm today. Please investigate urgently.",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "Yes, this is a P1 \u2013 Critical issue as it involves a material mismatch of USD 2,400,000, which blocks the same-day regulatory submission. \n\nPlease follow these steps to investigate:\n\n1. Check the feed-arrival dashboard to confirm if the feed arrived and on time.\n2. Compare the record count and the control total in the control file with what was loaded; a difference indicates records were rejected or dropped during load.\n3. Check the load-rejection log for the date and product.\n4. Verify if a reference-data change was made in the last 5 business days (see DPM-002).\n5. Only after these checks, compare against the source ledger at account level [1][4].",
+    "sources": [
+      {
+        "source": "DPM-003_Data_Issue_Priority_and_Materiality.md",
+        "chunk_id": 2,
+        "score": 0.4428,
+        "text": "DPM-003: Data Issue Priority and Materiality (synthetic analogue) > Priority matrix\n| Priority | When | First analysis due | Fix or explanation due |\n|---|---|---|---|\n| P1 \u2013 Critical | Material mismatch (USD 1,000,000 or more), or any mismatch that blocks a same-day regulatory submission such as the liquidity (LCR) report | 1 hour | Before the submission deadline |\n| P2 \u2013 High | USD 100,000 to 1,000,000, or blocks a report due within 3 business days | 4 hours | 1 business day |\n| P3 \u2013 Normal | Below USD 100,000, or tagging errors with no report due within 3 business days | 1 business day | 3 business days |\n| P4 \u2013 Low | Questions, clarifications, documentation requests | 2 business days | 5 business days |"
+      },
+      {
+        "source": "DPM-001_Feed_Arrival_and_Reconciliation.md",
+        "chunk_id": 1,
+        "score": 0.4354,
+        "text": "DPM-001: Feed Arrival and Reconciliation (synthetic analogue) > Feed SLAs\n- Source systems deliver daily feed files by 06:00 IST. Liquidity-relevant feeds (deposits, loans, cash and due) are critical: a delay blocks the same-day liquidity (LCR) submission.\n- Each feed file comes with a control file holding the record count and the control total of balances."
+      },
+      {
+        "source": "DPM-003_Data_Issue_Priority_and_Materiality.md",
+        "chunk_id": 1,
+        "score": 0.3718,
+        "text": "DPM-003: Data Issue Priority and Materiality (synthetic analogue) > Materiality\nA balance mismatch is **material** if it is USD 1,000,000 equivalent or more for one product and business unit, or if it changes a regulatory ratio that is reported that day."
+      },
+      {
+        "source": "DPM-001_Feed_Arrival_and_Reconciliation.md",
+        "chunk_id": 2,
+        "score": 0.3851,
+        "text": "DPM-001: Feed Arrival and Reconciliation (synthetic analogue) > First checks for any balance mismatch\n1. Check the feed-arrival dashboard: did the feed arrive, and on time?\n2. Compare the record count and the control total in the control file with what was loaded. A difference means records were rejected or dropped during load.\n3. Check the load-rejection log for the date and product.\n4. Check whether a reference-data change was made in the last 5 business days (see DPM-002).\n5. Only after these checks, compare against the source ledger at account level."
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for bringing this issue to our attention. The Billing and Payments team has been assigned to investigate this P2 priority matter urgently. \n\nTo begin resolving the discrepancy in the Deposits balance, please follow these initial steps:\n\n1. Check the feed-arrival dashboard to confirm if the feed arrived and on time.\n2. Compare the record count and control total in the control file with what was loaded.\n\nOnce these steps are completed, the team will proceed with further analysis and keep you updated on the progress. We appreciate your patience as we work to resolve this critical issue before the LCR submission deadline.",
+  "latency_ms": {
+    "classify": 368.2,
+    "sentiment": 49.7,
+    "summarize": 0.5,
+    "rag": 3573.3,
+    "reply": 3296.7,
+    "total": 7288.4
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "classification": {
+    "label": "Returns and Exchanges",
+    "score": 0.4263,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Returns and Exchanges",
+        "score": 0.4263
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.3143
+      },
+      {
+        "label": "Technical & IT Support",
+        "score": 0.1982
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "neutral",
+    "score": 0.5186,
+    "urgency": "P3",
+    "urgency_signals": [],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "Since last week's reference-data change, several OTC derivative trades are tagged to the wrong organisational unit, so they now show under the Treasury business unit in the Basel exposure report. Can you check the tagging?",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "No, I cannot check the tagging. Instead, you should follow these steps to address the issue:\n\n1. Identify the affected records, product, and business dates.\n2. Raise a correction request with the Reference Data team, including the effective date.\n3. After the hierarchy is corrected, reprocess the affected business dates and confirm the BU totals in the report [4].",
+    "sources": [
+      {
+        "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+        "chunk_id": 3,
+        "score": 0.5642,
+        "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > Common causes of wrong tagging\n1. **Hierarchy change not mapped:** an organisational unit was moved or renamed, and records after the effective date still use the old mapping. Typical sign: trades suddenly appear under a different BU (for example Treasury) in a report.\n2. **Missing mapping for a new product code:** records fall into a default or \"unassigned\" BU.\n3. **Effective date set wrongly:** the change applies to the wrong business dates."
+      },
+      {
+        "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+        "chunk_id": 2,
+        "score": 0.4782,
+        "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > Business unit and organisational tagging\n- Each record is tagged with a business unit (BU), an organisational unit and its reporting keys, using the organisational hierarchy maintained by the **Reference Data team**.\n- The Reference Data team owns the tagging rules and the hierarchy. Data Production Management applies them; it does not change them."
+      },
+      {
+        "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+        "chunk_id": 1,
+        "score": 0.4514,
+        "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > Product categories\nAfter loading, the product-segregation system assigns every record to one product category:\n\n| Category | Examples |\n|---|---|\n| OTC derivatives | Interest-rate swaps, FX forwards traded bilaterally |\n| Exchange-traded derivatives (ETD) | Listed futures and options |\n| Loans | Term loans, overdrafts, trade finance |\n| Deposits | Current, savings and term deposits |\n| Other derivatives | Embedded and structured derivatives |\n| Custody and trust | Assets held in custody or under trust |\n| Cash and Due | Cash, and balances due from other banks |"
+      },
+      {
+        "source": "DPM-002_Product_Segregation_and_BU_Tagging.md",
+        "chunk_id": 4,
+        "score": 0.4446,
+        "text": "DPM-002: Product Segregation and Business Unit Tagging (synthetic analogue) > How a tagging fix is made\n1. Identify the affected records, product and business dates.\n2. Raise a correction request with the Reference Data team, with the effective date.\n3. After the hierarchy is corrected, reprocess the affected business dates and confirm the BU totals in the report."
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for bringing this issue to our attention. The Returns and Exchanges team has been assigned to your ticket with a priority level of P3. \n\nTo address the tagging issue, please follow these initial steps: \n\n1. Identify the affected records, product, and business dates.\n2. Raise a correction request with the Reference Data team, including the effective date.\n\nOnce you have completed these steps, the team will assist you further in correcting the hierarchy and reprocessing the affected business dates. If you have any questions or need further assistance, feel free to reach out.",
+  "latency_ms": {
+    "classify": 256.1,
+    "sentiment": 28.2,
+    "summarize": 0.0,
+    "rag": 1580.6,
+    "reply": 2139.7,
+    "total": 4004.6
+  }
+}

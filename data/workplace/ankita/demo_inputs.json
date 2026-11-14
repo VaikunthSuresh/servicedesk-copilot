@@ -1,0 +1,11 @@
+{
+  "tickets": {
+    "adf_secret_expired": "The nightly sales ingestion pipeline in ADF failed at the copy activity with \"AADSTS7000222: the provided client secret keys are expired\". The finance team's Power BI dashboards are empty this morning.",
+    "databricks_driver_gc": "Our Databricks job for customer data enrichment keeps failing with \"Driver is up but is not responsive, likely due to GC\" since we added two new source tables. It ran fine last week.",
+    "unity_catalog_access": "Please give me read access to the Unity Catalog schema sales_curated so I can build a report. My manager has approved."
+  },
+  "questions": {
+    "maintenance_window": "What is the maintenance window for the data platform, and are pipelines paused during it?",
+    "rerun_failed_activity": "How do I rerun only the failed activity of an ADF pipeline instead of the whole pipeline?"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "answer": "To rerun only the failed activity of an ADF pipeline, go to **Monitor > Pipeline runs**, open the run, and select **Rerun from failed activity** [1].",
+  "sources": [
+    {
+      "source": "OPS-001_ADF_Pipeline_Failure_Runbook.md",
+      "chunk_id": 4,
+      "score": 0.6999,
+      "text": "OPS-001: Azure Data Factory (ADF) Pipeline Failure Runbook (synthetic analogue) > Rerunning\n- To rerun only what failed: **Monitor > Pipeline runs >** open the run **> Rerun from failed activity**. This skips the activities that already succeeded.\n- Rerun the whole pipeline only if earlier activities need to run again (for example after a source correction)."
+    },
+    {
+      "source": "OPS-001_ADF_Pipeline_Failure_Runbook.md",
+      "chunk_id": 1,
+      "score": 0.5377,
+      "text": "OPS-001: Azure Data Factory (ADF) Pipeline Failure Runbook (synthetic analogue) > First checks for any failed pipeline\n1. Open ADF Studio, go to **Monitor > Pipeline runs**, and open the failed run.\n2. Note the failed activity, its error code and error message. Paste the error into the ServiceNow ticket.\n3. Check whether other pipelines using the same linked service or integration runtime failed in the same window."
+    },
+    {
+      "source": "OPS-001_ADF_Pipeline_Failure_Runbook.md",
+      "chunk_id": 3,
+      "score": 0.5275,
+      "text": "OPS-001: Azure Data Factory (ADF) Pipeline Failure Runbook (synthetic analogue) > Common failure causes and fixes\nr data volume grew | Rerun; if repeated, raise the activity timeout and review the query |\n| Copy activity schema mismatch | Source added or renamed columns | Update the mapping or dataset schema, then rerun |"
+    },
+    {
+      "source": "OPS-001_ADF_Pipeline_Failure_Runbook.md",
+      "chunk_id": 5,
+      "score": 0.5493,
+      "text": "OPS-001: Azure Data Factory (ADF) Pipeline Failure Runbook (synthetic analogue) > Escalation\nIf a production pipeline cannot be fixed within 2 hours, escalate to the platform lead and notify the owners of downstream reports."
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "grounded": true
+}

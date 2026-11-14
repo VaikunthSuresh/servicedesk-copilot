@@ -1,0 +1,73 @@
+{
+  "classification": {
+    "label": "Sales and Pre-Sales",
+    "score": 0.9795,
+    "model": "v2_6cls_merged (fine-tuned)",
+    "mode": "fine-tuned",
+    "top_k": [
+      {
+        "label": "Sales and Pre-Sales",
+        "score": 0.9795
+      },
+      {
+        "label": "Customer & Product Support",
+        "score": 0.0076
+      },
+      {
+        "label": "Technical & IT Support",
+        "score": 0.004
+      }
+    ]
+  },
+  "sentiment": {
+    "sentiment": "neutral",
+    "score": 0.5029,
+    "urgency": "P3",
+    "urgency_signals": [],
+    "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+  },
+  "summary": {
+    "summary": "Please give me read access to the Unity Catalog schema sales_curated so I can build a report. My manager has approved.",
+    "model": "passthrough (ticket already short)"
+  },
+  "suggested_resolution": {
+    "answer": "No, you need approval from the data owner of the schema, not just your manager. Please raise an access request as a ServiceNow service request, naming the schema and your business need, and ensure you have the data owner's approval before submitting [1].",
+    "sources": [
+      {
+        "source": "OPS-003_Platform_Access_Availability_and_Priority.md",
+        "chunk_id": 1,
+        "score": 0.4963,
+        "text": "OPS-003: Platform Access, Availability and Ticket Priority (synthetic analogue) > Access requests\n- Workspace access and Unity Catalog permissions are granted to Azure AD (Entra ID) groups, never to individual users.\n- Read access to a catalog schema needs approval from the **data owner** of that schema. A line manager's approval alone is not enough; requests without data-owner approval are sent back.\n- Raise access as a ServiceNow **service request** (not an incident), naming the schema and the business need. Once approved, access is applied within 1 business day.\n- Service principals for pipelines are requested by the pipeline owner, never by end users."
+      },
+      {
+        "source": "SOP-007_Software_Installation_and_Licences.md",
+        "chunk_id": 0,
+        "score": 0.384,
+        "text": "SOP-007: Software Installation and Licence Requests > Overview\nOwner: End User Computing (EUC) and Software Asset Management (SAM)"
+      },
+      {
+        "source": "SOP-001_VPN_Troubleshooting.md",
+        "chunk_id": 3,
+        "score": -0.0073,
+        "text": "SOP-001: VPN Connectivity Troubleshooting (GlobalProtect / Cisco AnyConnect) > Authentication Failures\n- Ensure the user's password has not expired (see SOP-002 Password Reset).\n- MFA prompts must be approved within 60 seconds. If the user changed phones, re-register MFA via SOP-003."
+      },
+      {
+        "source": "Policy_Acceptable_Use_and_Data_Classification.md",
+        "chunk_id": 0,
+        "score": 0.3734,
+        "text": "Policy: Acceptable Use and Data Classification > Overview\nOwner: Information Security"
+      }
+    ],
+    "model": "gpt-4o-mini",
+    "grounded": true
+  },
+  "draft_reply": "Thank you for reaching out regarding your access request to the Unity Catalog schema sales_curated. This issue has been assigned to the Sales and Pre-Sales team with a priority level of P3.\n\nTo proceed, please follow these steps:\n1. Obtain approval from the data owner of the schema.\n2. Raise an access request via ServiceNow, clearly stating the schema name and your business need.\n\nOnce you have submitted the request with the necessary approvals, the team will review it and take the appropriate action. If you have any further questions, feel free to ask!",
+  "latency_ms": {
+    "classify": 178.3,
+    "sentiment": 14.4,
+    "summarize": 0.0,
+    "rag": 1390.8,
+    "reply": 2116.5,
+    "total": 3700.0
+  }
+}
